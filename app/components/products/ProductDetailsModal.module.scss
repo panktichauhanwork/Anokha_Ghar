@@ -1,0 +1,227 @@
+.modal {
+  .MuiDialog-paper {
+    border-radius: 16px;
+    overflow: hidden;
+    background: #ffffff;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.modalContent {
+  padding: 0 !important;
+  position: relative;
+}
+
+.closeButton {
+  position: absolute !important;
+  top: 16px;
+  right: 16px;
+  background: rgba(255, 255, 255, 0.9) !important;
+  backdrop-filter: blur(8px);
+  border-radius: 50%;
+  padding: 8px;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: rgba(255, 255, 255, 1) !important;
+    transform: scale(1.1);
+  }
+
+  .MuiSvgIcon-root {
+    font-size: 1.5rem;
+    color: #2c3e50;
+  }
+}
+
+.productContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  padding: 2rem;
+
+  @media (max-width: 900px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.imageSection {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.mainImage {
+  width: 100%;
+  height: 400px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+}
+
+.thumbnailContainer {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  padding: 0.5rem;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.thumbnail {
+  width: 80px;
+  height: 80px;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &.active {
+    border-color: #e67e22;
+    transform: scale(1.1);
+  }
+}
+
+.detailsSection {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 1rem;
+}
+
+.productName {
+  font-weight: 700 !important;
+  color: #2c3e50;
+  margin-bottom: 0.5rem !important;
+}
+
+.ratingContainer {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.reviews {
+  color: #7f8c8d !important;
+}
+
+.price {
+  font-weight: 700 !important;
+  color: #e67e22;
+  margin: 1rem 0 !important;
+}
+
+.description {
+  color: #34495e !important;
+  line-height: 1.6;
+}
+
+.tagsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tag {
+  background: #f8f9fa !important;
+  border-color: #e9ecef !important;
+  color: #2c3e50 !important;
+  font-weight: 500 !important;
+  transition: all 0.3s ease !important;
+
+  &:hover {
+    background: #e9ecef !important;
+    transform: translateY(-2px);
+  }
+}
+
+.divider {
+  margin: 1.5rem 0 !important;
+  background-color: rgba(0, 0, 0, 0.1) !important;
+}
+
+.actionButtons {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.addToCartButton {
+  background: linear-gradient(135deg, #e67e22 0%, #d35400 100%) !important;
+  color: #ffffff !important;
+  padding: 0.8rem 2rem !important;
+  border-radius: 8px !important;
+  font-weight: 600 !important;
+  text-transform: none !important;
+  transition: all 0.3s ease !important;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(230, 126, 34, 0.3) !important;
+  }
+
+  &:disabled {
+    background: #95a5a6 !important;
+    transform: none !important;
+    box-shadow: none !important;
+  }
+}
+
+.likeButton {
+  background: #f8f9fa !important;
+  border-radius: 8px !important;
+  padding: 0.8rem !important;
+  transition: all 0.3s ease !important;
+
+  &:hover {
+    background: #e9ecef !important;
+    transform: scale(1.1);
+  }
+
+  .MuiSvgIcon-root {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .productContainer {
+    padding: 1rem;
+  }
+
+  .mainImage {
+    height: 300px;
+  }
+
+  .thumbnail {
+    width: 60px;
+    height: 60px;
+  }
+
+  .productName {
+    font-size: 1.5rem !important;
+  }
+
+  .price {
+    font-size: 1.25rem !important;
+  }
+} 

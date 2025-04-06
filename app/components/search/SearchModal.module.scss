@@ -1,0 +1,179 @@
+.searchModal {
+  .dialogContent {
+    padding: 0 !important;
+  }
+}
+
+.searchContainer {
+  padding: 2rem;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  min-height: 80vh;
+}
+
+.searchInput {
+  margin-bottom: 1rem;
+
+  .MuiOutlinedInput-root {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 50px;
+    padding: 0.5rem 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+
+    &:hover {
+      background: rgba(255, 255, 255, 1);
+      box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+    }
+
+    .MuiOutlinedInput-notchedOutline {
+      border: none;
+    }
+  }
+
+  .searchIcon {
+    color: #666;
+  }
+}
+
+.suggestionsContainer {
+  position: absolute;
+  top: 80px;
+  left: 2rem;
+  right: 2rem;
+  max-height: 300px;
+  overflow-y: auto;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  animation: slideDown 0.3s ease;
+
+  .MuiList-root {
+    padding: 0;
+  }
+}
+
+.suggestionItem {
+  padding: 1rem;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background: rgba(0, 0, 0, 0.04);
+  }
+
+  .MuiListItemText-primary {
+    font-weight: 500;
+    color: #333;
+  }
+
+  .MuiListItemText-secondary {
+    color: #666;
+  }
+}
+
+.suggestionImage {
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.resultsContainer {
+  margin-top: 2rem;
+}
+
+.resultsTitle {
+  margin-bottom: 1.5rem;
+  color: #333;
+  font-weight: 600;
+}
+
+.resultsGrid {
+  margin-top: 1rem;
+}
+
+.productCard {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  height: 100%;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 1);
+  }
+}
+
+.imageContainer {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.productImage {
+  object-fit: cover;
+  transition: transform 0.3s ease;
+
+  .productCard:hover & {
+    transform: scale(1.05);
+  }
+}
+
+.productInfo {
+  padding: 1rem;
+}
+
+.productName {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.productPrice {
+  color: #666;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.tagsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.tag {
+  background: rgba(0, 0, 0, 0.05);
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  color: #666;
+  font-size: 0.75rem;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 600px) {
+  .searchContainer {
+    padding: 1rem;
+  }
+
+  .suggestionsContainer {
+    left: 1rem;
+    right: 1rem;
+  }
+
+  .imageContainer {
+    height: 150px;
+  }
+} 

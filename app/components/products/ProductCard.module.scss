@@ -1,0 +1,151 @@
+.productCard {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 12px;
+  overflow: hidden;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.imageContainer {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+}
+
+.productImage {
+  object-fit: cover;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.4) 100%
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.viewButton {
+  background: linear-gradient(135deg, #e67e22 0%, #d35400 100%) !important;
+  color: #ffffff !important;
+  padding: 0.8rem 2rem !important;
+  border-radius: 30px !important;
+  font-weight: 600 !important;
+  text-transform: none !important;
+  box-shadow: 0 4px 15px rgba(230, 126, 34, 0.3) !important;
+  transition: all 0.3s ease !important;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(230, 126, 34, 0.4) !important;
+  }
+}
+
+.cardContent {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+}
+
+.productName {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #2c3e50;
+}
+
+.category {
+  color: #7f8c8d !important;
+  margin-bottom: 0.75rem !important;
+  font-size: 0.9rem !important;
+}
+
+.ratingContainer {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  gap: 0.5rem;
+}
+
+.reviews {
+  color: #7f8c8d !important;
+  font-size: 0.85rem !important;
+}
+
+.price {
+  font-weight: 700;
+  color: #e67e22;
+  margin-bottom: 1rem;
+}
+
+.likeButton {
+  color: #e67e22;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+.addToCartButton {
+  margin-top: auto;
+  background: linear-gradient(135deg, #e67e22 0%, #d35400 100%) !important;
+  color: #ffffff !important;
+  border-radius: 8px !important;
+  padding: 0.8rem !important;
+  transition: all 0.3s ease !important;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(230, 126, 34, 0.3) !important;
+  }
+
+  &:disabled {
+    background: #95a5a6 !important;
+    transform: none !important;
+    box-shadow: none !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .imageContainer {
+    height: 250px;
+  }
+
+  .productCard {
+    margin-bottom: 1rem;
+  }
+
+  .cardContent {
+    padding: 1rem;
+  }
+
+  .productName {
+    font-size: 1rem !important;
+  }
+
+  .price {
+    font-size: 1.1rem !important;
+  }
+} 

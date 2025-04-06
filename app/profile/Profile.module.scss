@@ -1,0 +1,69 @@
+.profileContainer {
+  padding: 4rem 0;
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 3rem !important;
+  color: #2c3e50 !important;
+  font-weight: 700 !important;
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(to right, #e67e22, #d35400);
+    border-radius: 2px;
+  }
+}
+
+.wishlistCard {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 12px;
+  overflow: hidden;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  .MuiCardMedia-root {
+    object-fit: cover;
+  }
+
+  .MuiCardContent-root {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.orderCard {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 12px;
+  overflow: hidden;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  }
+}
+
+@media (max-width: 600px) {
+  .profileContainer {
+    padding: 2rem 0;
+  }
+
+  .title {
+    font-size: 2rem !important;
+    margin-bottom: 2rem !important;
+  }
+} 
