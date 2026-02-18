@@ -1,12 +1,12 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { Card, CardMedia, CardContent, Typography, IconButton, Button, Box } from '@mui/material';
+import { Card, CardContent, Typography, IconButton, Button, Box } from '@mui/material';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { motion } from 'framer-motion';
-import Link from 'next/link';
+import Image from 'next/image';
 import styles from './ProductCard.module.scss';
 import { Product } from '../../data/products';
 import ProductDetailsModal from './ProductDetailsModal';
@@ -81,13 +81,16 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
   if (!mounted) {
     return (
       <Card className={styles.productCard}>
-        <CardMedia
-          component="img"
-          height="300"
-          image={product.image}
-          alt={product.name}
-          className={styles.productImage}
-        />
+        <div className={styles.imageContainer}>
+          <Image
+            src={product.image}
+            alt={product.name}
+            width={300}
+            height={300}
+            className={styles.productImage}
+            priority
+          />
+        </div>
         <CardContent className={styles.cardContent}>
           <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
             <Typography variant="h6" component="div" className={styles.productName}>
@@ -110,13 +113,16 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
         transition={{ duration: 0.5 }}
       >
         <Card className={styles.productCard} onClick={() => setIsModalOpen(true)}>
-          <CardMedia
-            component="img"
-            height="300"
-            image={product.image}
-            alt={product.name}
-            className={styles.productImage}
-          />
+          <div className={styles.imageContainer}>
+            <Image
+              src={product.image}
+              alt={product.name}
+              width={300}
+              height={300}
+              className={styles.productImage}
+              priority
+            />
+          </div>
           <CardContent className={styles.cardContent}>
             <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
               <Typography variant="h6" component="div" className={styles.productName}>

@@ -17,6 +17,7 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import styles from './ProductDetailsModal.module.scss';
 import { Product } from '../../data/products';
 
@@ -125,9 +126,13 @@ const ProductDetailsModal: React.FC<ProductDetailsModalProps> = ({
               animate={{ opacity: 1 }}
               transition={{ duration: 0.3 }}
             >
-              <img
+              <Image
                 src={product.images[currentImageIndex]}
                 alt={product.name}
+                width={600}
+                height={600}
+                className={styles.productImage}
+                priority
               />
             </motion.div>
             
@@ -142,7 +147,13 @@ const ProductDetailsModal: React.FC<ProductDetailsModalProps> = ({
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  <img src={image} alt={`${product.name} ${index + 1}`} />
+                  <Image
+                    src={image}
+                    alt={`${product.name} ${index + 1}`}
+                    width={80}
+                    height={80}
+                    className={styles.thumbnailImage}
+                  />
                 </motion.div>
               ))}
             </Box>
